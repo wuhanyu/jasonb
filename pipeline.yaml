@@ -1,0 +1,11 @@
+steps:
+  - input: "Information please"
+    fields:
+      - text: "What is the date today?"
+        key: "todays-date"
+  - command: "echo $(buildkite-agent meta-data get todays-date)"
+  - input: "Information please - 2"
+    fields:
+      - text: "What is the date today again?"
+        key: "todays-date-2"
+  - command: "echo $(buildkite-agent meta-data get todays-date-2)"
