@@ -1,12 +1,18 @@
 steps:
-  - input: "Information please"
+  - block: "Release"
     label: "Step 1"
+    prompt: "Fill out the details for release"
     fields:
-      - text: "What is the date today?"
-        key: "todays-date"
-  - wait
-  - command: "echo $(buildkite-agent meta-data get todays-date)"
-    label: "Step 2"
+      - text: "Release Name"
+        key: "release-name" 
+      - text: "Release Notes"
+        key: "release-notes"
+      - text: "Release Date"
+        key: "release-date"
+      - text: "Release Version"
+        key: "release-version"
+  - command: "echo $(buildkite-agent meta-data get release-name)"
+    label: "Step 4"        
   - input: "Information please - 2"
     label: "Step 3"
     fields:
