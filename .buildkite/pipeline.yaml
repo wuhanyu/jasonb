@@ -4,6 +4,7 @@ steps:
     fields:
       - text: "What is the date today?"
         key: "todays-date"
+  - wait
   - command: "echo $(buildkite-agent meta-data get todays-date)"
     label: "Step 2"
   - input: "Information please - 2"
@@ -11,5 +12,6 @@ steps:
     fields:
       - text: "What is the date today again?"
         key: "todays-date-2"
+  - wait
   - command: "echo $(buildkite-agent meta-data get todays-date-2)"
     label: "Step 4"
