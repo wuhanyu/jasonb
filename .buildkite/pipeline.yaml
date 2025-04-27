@@ -7,12 +7,12 @@ steps:
         key: "release-name" 
       - text: "Release Notes"
         key: "release-notes"
-      - text: "Release Date"
-        key: "release-date"
       - text: "Release Version"
+        hint: "What's the code name for this release? :name_badge:"
+        required: false
         key: "release-version"
   - command: "echo $(buildkite-agent meta-data get release-name)"
-    label: "Step 4"        
+    label: "Step 2"        
   - input: "Information please - 2"
     label: "Step 3"
     fields:
